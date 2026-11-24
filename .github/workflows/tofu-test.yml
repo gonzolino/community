@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@v7
+        uses: actions/checkout@v7.0.1
 
       - name: Set up tofu
-        uses: opentofu/setup-opentofu@v2
+        uses: opentofu/setup-opentofu@v2.0.2
 
       - name: Check tofu formatting
         working-directory: automation
