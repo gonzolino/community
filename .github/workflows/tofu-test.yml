@@ -29,6 +29,8 @@ jobs:
         working-directory: automation
         run: tofu validate
         env:
-          GITHUB_APP_ID: ${{ vars.TF_APP_ID }}
-          GITHUB_APP_INSTALLATION_ID: ${{ vars.TF_APP_INSTALLATION_ID }}
-          GITHUB_APP_PEM_FILE: ${{ secrets.TF_APP_PEM_FILE }}
+          # Validate needs the github auth env variables set, but it does not
+          # actually authenticate. Therefore we set it to some fake values.
+          GITHUB_APP_ID: "fake-app-id"
+          GITHUB_APP_INSTALLATION_ID: "fake-app-install-id"
+          GITHUB_APP_PEM_FILE: "fake-pem-file"
